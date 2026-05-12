@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import useScrollDirection from "../hooks/useScrollDirection";
 import MagneticButton from "./MagneticButton";
+import myLogo from "../assets/logo.png"; // Agar SVG hai toh logo.svg kar dena
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -39,7 +40,7 @@ export default function Navbar({ dark, setDark }) {
               
               {/* LOGO */}
               <div className="font-bold text-lg tracking-tight flex gap-2 text-gray-900 dark:text-white">
-                ✨ RohitCodex
+                ✨ ＲｏｈｉｔＣｏｄｅｘ
               </div>
 
               {/* DESKTOP NAV ITEMS */}
