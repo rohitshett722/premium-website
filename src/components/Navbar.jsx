@@ -123,10 +123,11 @@ export default function Navbar({ dark, setDark }) {
 
             {/* DROPDOWN MENU CONTAINER */}
             <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.95, filter: "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -20, scale: 0.95, filter: "blur(10px)" }}
-              transition={{ type: "spring", stiffness: 200, damping: 25 }}
+              // FIX 1: Removed filter blur animation, optimized scaling
+              initial={{ opacity: 0, y: -20, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 250, damping: 25 }}
               className="
                 fixed top-24 left-4 right-4 z-50 
                 flex flex-col gap-2 p-3
@@ -136,7 +137,6 @@ export default function Navbar({ dark, setDark }) {
                 border border-gray-200 dark:border-white/10
                 shadow-2xl shadow-purple-500/10 dark:shadow-purple-900/20
                 origin-top overflow-hidden
-                transition-all duration-500
               "
             >
               {/* LINKS */}
@@ -153,7 +153,8 @@ export default function Navbar({ dark, setDark }) {
                     <motion.div
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.04 }}
+                      // FIX 2: Added a slight base delay so parent box opens first
+                      transition={{ delay: 0.1 + i * 0.04 }}
                       className={`
                         w-full p-4 rounded-2xl flex items-center justify-between
                         transition-all duration-300 group border
