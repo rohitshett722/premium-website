@@ -39,7 +39,7 @@ export default function Navbar({ dark, setDark }) {
               
               {/* LOGO */}
               <div className="font-bold text-lg tracking-tight flex gap-2 text-gray-900 dark:text-white">
-                ✨ SPOTLIGHT
+                ✨ RohitCodex
               </div>
 
               {/* DESKTOP NAV ITEMS */}
